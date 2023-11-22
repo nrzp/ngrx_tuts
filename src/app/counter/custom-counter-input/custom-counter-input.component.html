@@ -1,8 +1,16 @@
  <div class="container">
     <div class="row">
+        <div class="col-md-4 text-center">
+            <h2>{{channelName}}</h2>
+        </div>
+
         <div class="col-md-4 text-center" style="display: flex;">
             <input type="text" placeholder="Enter value" class="ml-5 form-control" [(ngModel)]="value">&nbsp;
             <button class="btn btn-primary" (click)="onAdd()">Add Counter</button>
+        </div>
+
+        <div class="col-md-4 text-center" style="display: flex;"> 
+            <button class="btn btn-primary" (click)="onChangeChannel()">Change Channel</button>
         </div>
     </div>
 </div>

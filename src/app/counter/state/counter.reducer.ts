@@ -1,4 +1,4 @@
-import { increment, decrement, reset, customIncrement } from './counter.actions';
+import { increment, decrement, reset, customIncrement, changeChannelName } from './counter.actions';
 import { initialState } from './counter.state';
 import { createReducer, on } from "@ngrx/store";
 
@@ -25,6 +25,12 @@ const _counterReducer = createReducer(initialState,
         return {
             ...state,
             counter: state.counter + action.count
+        }
+    }),
+    on(changeChannelName, state=>{
+        return {
+            ...state,
+            channelName: 'NDTV'
         }
     })
 )
