@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment.prod';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/component/header/header.component';
 import { PostListComponent } from './post/post-list/post-list.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,11 @@ import { PostListComponent } from './post/post-list/post-list.component';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({counter: counterReducer}),
-    FormsModule
+    FormsModule,
+    StoreDevtoolsModule.instrument({
+      // maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
