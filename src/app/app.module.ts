@@ -1,3 +1,4 @@
+import { appReducer } from './store/app.state';
 import { environment } from './../environments/environment.prod';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,7 +31,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({counter: counterReducer}),
+    StoreModule.forRoot(appReducer),
     FormsModule,
     StoreDevtoolsModule.instrument({
       // maxAge: 25, // Retains last 25 states
