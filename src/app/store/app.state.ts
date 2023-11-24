@@ -3,7 +3,7 @@ import { counterState } from "../counter/state/counter.state";
 import { counterReducer } from '../counter/state/counter.reducer';
 import { postsReducer } from '../post/state/posts.reducer';
 
-export interface appState {
+export interface AppState {
     counter: counterState,
     posts: PostsState
 }
