@@ -1,0 +1,27 @@
+<div class="row my-4">
+    <h4>Add Post</h4>
+    <hr>
+    <div class="col-md-12 post-form"> 
+        <form [formGroup]="postForm" (ngSubmit)="submit()" class="form"> 
+            <div class="mb-3">
+                <label class="form-label">Title</label>
+                <input id="title" type="text" formControlName="title" class="form-control" placeholder="Enter title" required>
+            </div>
+            <div style="color: red;">
+                {{showTitleErrors()}}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea id="desc" formControlName="desc" class="form-control" placeholder="Enter description" required></textarea>
+            </div>
+            <div style="color: red;">
+                {{showDesciptionErrors()}}
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit" [disabled]="postForm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
